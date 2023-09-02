@@ -1,0 +1,192 @@
+<?xml version="1.0" ?>
+<robot name="bannu" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find bannu_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find bannu_description)/urdf/bannu.trans" />
+<xacro:include filename="$(find bannu_description)/urdf/bannu.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-1.4326115948005535e-05 -1.2600134811548118e-17 0.029087654253321497" rpy="0 0 0"/>
+    <mass value="1.53024455420228"/>
+    <inertia ixx="0.004664" iyy="0.004851" izz="0.009038" ixy="0.0" iyz="-0.0" ixz="-1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find bannu_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find bannu_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_2_1">
+  <inertial>
+    <origin xyz="-3.618764437576268e-18 -0.009999999999999995 -6.938893903907228e-18" rpy="0 0 0"/>
+    <mass value="0.03652101459798134"/>
+    <inertia ixx="7e-06" iyy="1.1e-05" izz="7e-06" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 0.1 -0.025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find bannu_description)/meshes/wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 0.1 -0.025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find bannu_description)/meshes/wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_1_1">
+  <inertial>
+    <origin xyz="-5.839210486826581e-18 0.009999999999999995 3.469446951953614e-18" rpy="0 0 0"/>
+    <mass value="0.03652101459798134"/>
+    <inertia ixx="7e-06" iyy="1.1e-05" izz="7e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.1 -0.025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find bannu_description)/meshes/wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.1 -0.025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find bannu_description)/meshes/wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="0.0 0.0 0.010000000000000009" rpy="0 0 0"/>
+    <mass value="0.08658229353293467"/>
+    <inertia ixx="3.1e-05" iyy="3.1e-05" izz="5.6e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.06" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find bannu_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.06" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find bannu_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="gps_1">
+  <inertial>
+    <origin xyz="0.004999564465025266 0.0 6.938893903907228e-18" rpy="0 0 0"/>
+    <mass value="0.0015796316677450844"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.063857 -0.0 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find bannu_description)/meshes/gps_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.063857 -0.0 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find bannu_description)/meshes/gps_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="sensor_2_1">
+  <inertial>
+    <origin xyz="0.0 0.011953949421835936 0.0049999999999999975" rpy="0 0 0"/>
+    <mass value="0.003582943115950085"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1 -0.0 -0.025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find bannu_description)/meshes/sensor_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1 -0.0 -0.025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find bannu_description)/meshes/sensor_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_1">
+  <inertial>
+    <origin xyz="-0.004999564465025266 0.0 0.0" rpy="0 0 0"/>
+    <mass value="0.003465633747055477"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.063857 -0.0 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find bannu_description)/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.063857 -0.0 -0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find bannu_description)/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Revolute 2" type="continuous">
+  <origin xyz="0.0 -0.1 0.025" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_2_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Revolute 3" type="continuous">
+  <origin xyz="0.0 0.1 0.025" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_1_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid 4" type="fixed">
+  <origin xyz="0.0 0.0 0.06" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="Rigid 5" type="fixed">
+  <origin xyz="0.063857 0.0 0.05" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="gps_1"/>
+</joint>
+
+<joint name="Rigid 6" type="fixed">
+  <origin xyz="0.1 0.0 0.025" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="sensor_2_1"/>
+</joint>
+
+<joint name="Rigid 7" type="fixed">
+  <origin xyz="-0.063857 0.0 0.05" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="camera_1"/>
+</joint>
+
+</robot>
